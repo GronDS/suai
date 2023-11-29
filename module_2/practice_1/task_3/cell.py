@@ -51,6 +51,7 @@ class Cell(Turtle):
         self.hideturtle()
         
     def draw_black_cell(self, cell_len, x, y):
+        # Drawing a black cell using a turtle 
         self.speed(0)
         self.penup()
         self.goto(x, y)
