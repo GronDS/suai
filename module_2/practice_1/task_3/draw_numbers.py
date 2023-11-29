@@ -229,6 +229,5 @@ def drawnum(d, n, x, y):
     numbers[n](d, x, y)
     
 if __name__ == '__main__':
-    drawnum(100, 9, -100, -100)
-    done()
-    #pass
+    # drawnum(100, 9, -100, -100)
+    pass
