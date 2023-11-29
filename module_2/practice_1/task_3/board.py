@@ -140,12 +140,11 @@ class Board():
         
         
 if __name__ == '__main__':
-    my_board = Board(9)
-    my_board.make_board()
-    my_board.numerate_board()
-    for cell in my_board.cells:
-        print(cell.order, cell.occupied)
+    # my_board = Board(5)
+    # my_board.make_board()
+    # my_board.numerate_board()
+    # for cell in my_board.cells:
+    #     print(cell.order, cell.occupied)
         
-    my_board.draw_turn(2, 2, 1)
-                    
-    done()
+    # my_board.draw_turn(2, 2, 1)
+    pass

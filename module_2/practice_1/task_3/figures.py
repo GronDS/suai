@@ -1,4 +1,4 @@
-from turtle import Turtle, done
+from turtle import Turtle
 class Figures(Turtle):
     
     def __init__(
@@ -6,6 +6,7 @@ class Figures(Turtle):
         super().__init__()
         self._pos_x = pos_x
         self._pos_y = pos_y
+        self.hideturtle()
 
 class Nougts(Figures):
     
@@ -19,7 +20,6 @@ class Nougts(Figures):
         self.pendown()
         self.circle(value / 2)
         self.penup()
-        self.hideturtle()
         
 class Crosses(Figures):
     
@@ -36,7 +36,6 @@ class Crosses(Figures):
         self.pendown()
         self.goto(self._pos_x, self._pos_y + value)
         self.penup()
-        self.hideturtle()
 
 if __name__ == '__main__':
     cross1 = Crosses(0, 0)
@@ -44,5 +43,4 @@ if __name__ == '__main__':
 
     cross1.draw_cross(100)
     nougt1.draw_nought(200)
-    done()
     # pass

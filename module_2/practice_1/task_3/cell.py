@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import Turtle, done
 
 class Cell(Turtle):
     # Cell for a tic-tac-toe board, inheriting the turtle class
@@ -14,6 +14,7 @@ class Cell(Turtle):
         self.__order: list = order
         self.__occupied: bool = False
         self.pensize(3)
+        self.hideturtle()
         
     @property
     def order(self):
@@ -48,7 +49,6 @@ class Cell(Turtle):
             self.left(90)
         self.penup()
         self.forward(cell_len)
-        self.hideturtle()
         
     def draw_black_cell(self, cell_len, x, y):
         # Drawing a black cell using a turtle 
@@ -61,7 +61,6 @@ class Cell(Turtle):
         self.draw_cell(cell_len, x, y)
         self.end_fill()
         self.penup()
-        self.hideturtle()
 
-if __name__ == '__main__':
+if __name__ == '__main__':    
     pass

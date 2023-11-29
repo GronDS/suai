@@ -24,7 +24,6 @@ class Nine(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
         
 class Eight(Figures):
     
@@ -50,7 +49,6 @@ class Eight(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
 
 class Seven(Figures):
     
@@ -73,7 +71,6 @@ class Seven(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
 
 class Six(Figures):
     
@@ -99,7 +96,6 @@ class Six(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
         
 class Five(Figures):
     
@@ -125,7 +121,6 @@ class Five(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
         
 class Four(Figures):
     
@@ -148,7 +143,6 @@ class Four(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
         
 class Three(Figures):
     
@@ -173,7 +167,6 @@ class Three(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
 
 class Two(Figures):
     
@@ -198,7 +191,6 @@ class Two(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
         
 class One(Figures):
     
@@ -220,7 +212,6 @@ class One(Figures):
         self.goto(point)
         self.pendown()
         self.setheading(0)
-        self.hideturtle()
 
 numbers = {
     1 : One(0, 0).draw_one,
@@ -234,13 +225,8 @@ numbers = {
     9 : Nine(0, 0).draw_nine
     }
 
-t = Turtle()
-
 def drawnum(d, n, x, y): 
     numbers[n](d, x, y)
-    t.penup()
-    t.forward(1.5*d)
-    t.pendown()
     
 if __name__ == '__main__':
     drawnum(100, 9, -100, -100)
