@@ -1,12 +1,9 @@
-from turtle import *
 from cell import Cell
-
 from draw_numbers import *
 from figures import *
 
-screen = Screen()
+
 window_size = 900
-screen.setup(window_size + 20, window_size + 20)
 
 class Board():
 #  A board class that creates instances of a cell

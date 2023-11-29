@@ -1,6 +1,4 @@
-from turtle import Turtle, Screen, done
-screen = Screen()
-screen.screensize(900, 900)
+from turtle import Turtle, done
 class Figures(Turtle):
     
     def __init__(
@@ -17,12 +15,9 @@ class Nougts(Figures):
     def draw_nought(self, value):
         self.penup()
         self.goto(self._pos_x, self._pos_y)
+        self.forward(value / 2)
         self.pendown()
-        self.goto(self._pos_x + value, self._pos_y + value)
-        self.penup()
-        self.goto(self._pos_x + value, self._pos_y)
-        self.pendown()
-        self.goto(self._pos_x, self._pos_y + value)
+        self.circle(value / 2)
         self.penup()
         self.hideturtle()
         
@@ -34,9 +29,12 @@ class Crosses(Figures):
     def draw_cross(self, value):
         self.penup()
         self.goto(self._pos_x, self._pos_y)
-        self.forward(value / 2)
         self.pendown()
-        self.circle(value / 2)
+        self.goto(self._pos_x + value, self._pos_y + value)
+        self.penup()
+        self.goto(self._pos_x + value, self._pos_y)
+        self.pendown()
+        self.goto(self._pos_x, self._pos_y + value)
         self.penup()
         self.hideturtle()
 

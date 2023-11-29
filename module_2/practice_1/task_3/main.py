@@ -1,9 +1,13 @@
 '''Напишите программу, которая реализует игру «Крестики-нолики». '''
+from turtle import Screen
+
 from cell import Cell
-from board import Board
+from board import *
 from player import Player
 from figures import Figures
 
+screen = Screen()
+screen.setup(window_size + 20, window_size + 20)
 
 if __name__ == '__main__':
     while True:
