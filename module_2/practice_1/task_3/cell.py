@@ -1,4 +1,4 @@
-from turtle import Turtle, done
+from turtle import Turtle, done, Screen
 
 class Cell(Turtle):
     # Cell for a tic-tac-toe board, inheriting the turtle class
@@ -22,12 +22,14 @@ class Cell(Turtle):
 
     @order.setter
     def order(self, order):
-        if type(order) == list[int] and len(order) == 2:
+        if type(order) == list and len(order) == 2:
             self.__order = order
-        elif type(order) != list[int]:
-            print("Incorrect type!")
+        elif type(order) != list:
+            print("Cell incorrect type!")
         elif len(order) != 2:
-            print('Incorrect value!')
+            print('Cell incorrect value!')
+        else:
+            print('Error!')
             
     @property
     def occupied(self):

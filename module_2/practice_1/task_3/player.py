@@ -11,7 +11,7 @@ class Player:
 	:return: None
 	"""
         self.__name: str|None = name
-        self.__turn: list[int] = [1, 1]
+        self.__turn: list[int] = [0, 0]
         self.__side :int|None= None
     
     @property
@@ -24,6 +24,24 @@ class Player:
             self.__name = name
         else:
             print("Incorrect name!")    
+    
+    @property
+    def turn(self):
+        return self.__turn
+
+    @turn.setter 
+    def turn(self, turn):
+        if type(turn) == list and len(turn) == 2:
+            self.__turn = turn
+        elif type(turn) != list:
+            print("Turn incorrect type! Try again!")
+            self.ask_turn()
+        elif len(turn) != 2:
+            print('Incorrect input! Try again!')
+            self.ask_turn()
+        else:
+            print('Error!')
+            self.ask_turn()
 
     @property
     def side(self):
@@ -46,10 +64,10 @@ class Player:
         '''Asks the player what move he wants to make
         return: self.turn
         '''
-        turn  = input(
+        current_turn  = input(
             f'{self.name}, select a cell and \
 enter separated by a space (x y): ').split()
-        self.turn = [int(numbers) for numbers in turn]
+        self.turn = [int(numbers) for numbers in current_turn]
         return self.turn
     
     def ask_side(self):

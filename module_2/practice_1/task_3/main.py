@@ -1,15 +1,12 @@
 '''Напишите программу, которая реализует игру «Крестики-нолики». '''
-from turtle import Screen
-
-from cell import Cell
+from cell import *
 from board import *
 from player import Player
-from figures import Figures
 
 screen = Screen()
 screen.setup(window_size + 20, window_size + 20)
 
-def ask_player(player_name, gameboard):
+def ask_player(player_name, gameboard, size):
     '''Asks the player how he wants to move, if the cell is free, 
     he writes it down and draws it, otherwise he informs about an error 
     and asks for a move again
@@ -17,7 +14,19 @@ def ask_player(player_name, gameboard):
     '''
     while True:
         try:
-            player_name.ask_turn()
+            turn = player_name.ask_turn()
+            error_status = False
+            for num in turn:
+                if num > size:
+                    print('Value is more, than boardsize. Try again!')
+                    error_status = 1
+                    break
+                else:
+                    continue
+
+            if error_status:
+                continue
+            
             break
         except:
             print('Incorrect input! Try again!')
@@ -80,5 +89,5 @@ if __name__ == '__main__':
         player_2.side = 0
                 
     while True:
-        ask_player(player_1, current_gameboard)
-        ask_player(player_2, current_gameboard)
+        ask_player(player_1, current_gameboard, gameboard_size)
+        ask_player(player_2, current_gameboard, gameboard_size)
