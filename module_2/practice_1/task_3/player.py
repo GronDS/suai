@@ -60,7 +60,7 @@ class Player:
         self.name = input('Enter your name: ')
         return self.name
     
-    def ask_turn(self, boardsize :int=3):
+    def ask_turn(self, boardsize :int=9):
         '''Asks the player what move he wants to make and checks if the
         move matches the size of the board
         :boardsize: size of the playing board

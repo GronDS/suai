@@ -1,5 +1,6 @@
 from turtle import Turtle
-class Figures(Turtle):
+from abc import ABC, abstractmethod
+class Figures(ABC, Turtle):
     
     def __init__(
         self, pos_x :int|float, pos_y :int|float) -> None:
@@ -7,13 +8,14 @@ class Figures(Turtle):
         self._pos_x = pos_x
         self._pos_y = pos_y
         self.hideturtle()
+        
+    @abstractmethod
+    def draw():
+        pass
 
 class Nougts(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_nought(self, value):
+            
+    def draw(self, value):
         self.penup()
         self.goto(self._pos_x, self._pos_y)
         self.forward(value / 2)
@@ -22,11 +24,8 @@ class Nougts(Figures):
         self.penup()
         
 class Crosses(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
         
-    def draw_cross(self, value):
+    def draw(self, value):
         self.penup()
         self.goto(self._pos_x, self._pos_y)
         self.pendown()
@@ -41,6 +40,6 @@ if __name__ == '__main__':
     cross1 = Crosses(0, 0)
     nougt1 = Nougts(200, 100)
 
-    cross1.draw_cross(100)
-    nougt1.draw_nought(200)
+    cross1.draw(100)
+    nougt1.draw(200)
     # pass

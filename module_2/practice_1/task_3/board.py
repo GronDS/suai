@@ -130,10 +130,10 @@ class Board():
         y = -(window_size / 2) + cell_len * order_y
         if figure == 0:
             nought = Nougts(x, y)
-            nought.draw_nought(cell_len)
+            nought.draw(cell_len)
         elif figure == 1:
             cross = Crosses(x, y)
-            cross.draw_cross(cell_len)
+            cross.draw(cell_len)
         
         
         

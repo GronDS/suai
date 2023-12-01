@@ -1,11 +1,8 @@
 from figures import *
 #x and y let the user place their numbers down, d is length of sides.
 class Nine(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+       
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -25,11 +22,8 @@ class Nine(Figures):
         self.setheading(0)
         
 class Eight(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+       
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -50,11 +44,8 @@ class Eight(Figures):
         self.setheading(0)
 
 class Seven(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -72,11 +63,8 @@ class Seven(Figures):
         self.setheading(0)
 
 class Six(Figures):
-    
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
         
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -98,10 +86,7 @@ class Six(Figures):
         
 class Five(Figures):
     
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -123,10 +108,7 @@ class Five(Figures):
         
 class Four(Figures):
     
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -145,10 +127,7 @@ class Four(Figures):
         
 class Three(Figures):
     
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -169,10 +148,7 @@ class Three(Figures):
 
 class Two(Figures):
     
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -193,10 +169,7 @@ class Two(Figures):
         
 class One(Figures):
     
-    def __init__(self, pos_x: int | float, pos_y: int | float) -> None:
-        super().__init__(pos_x, pos_y)
-        
-    def draw_number(self, d):
+    def draw(self, d):
         self.speed(0)
         self.penup()
         self.goto(self._pos_x, self._pos_y)
@@ -225,7 +198,7 @@ numbers = {
     }
 
 def drawnum(d, n, x, y): 
-    numbers[n](x,y).draw_number(d)
+    numbers[n](x,y).draw(d)
     
 if __name__ == '__main__':
     drawnum(100, 9, -100, -100)
