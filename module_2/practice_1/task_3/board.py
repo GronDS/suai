@@ -22,8 +22,9 @@ class Board():
         self.__x :int|float= -(window_size / 2)
         self.__y :int|float= -(window_size / 2)
         self.__make_board()
-        self.__numerate_board()
-        
+        self.__black_corner()
+        self.__numerate_x()
+        self.__numerate_y()        
     @property
     def size(self):
         return self.__size
@@ -95,36 +96,31 @@ class Board():
         self.x = -(window_size / 2)
         self.y = -(window_size / 2)
         
-    def __numerate_board(self):
-        '''Сalls frame design functions with numbering'''
-        def black_corner():
-            '''Paints the bottom left cell black'''
-            cell_len = window_size / (self.size + 1)
-            start_cell = Cell()
-            start_cell.speed(0)
-            start_cell.draw_black_cell(cell_len, self.x, self.y)
+
+    def __black_corner(self):
+        '''Paints the bottom left cell black'''
+        cell_len = window_size / (self.size + 1)
+        start_cell = Cell()
+        start_cell.speed(0)
+        start_cell.draw_black_cell(cell_len, self.x, self.y)
         
-        def numerate_x():
-            '''Draws numbering by X'''     
-            cell_len = window_size / (self.size + 1)
-            self.x = -(window_size / 2) +  cell_len + (cell_len / 2)
-            self.y = -(window_size / 2) + cell_len - (cell_len / 10)
-            for cell in range(self.size):
-                drawnum((cell_len / 2.5), cell + 1, self.x, self.y)
-                self.x+= cell_len
+    def __numerate_x(self):
+        '''Draws numbering by X'''     
+        cell_len = window_size / (self.size + 1)
+        self.x = -(window_size / 2) +  cell_len + (cell_len / 2)
+        self.y = -(window_size / 2) + cell_len - (cell_len / 10)
+        for cell in range(self.size):
+            drawnum((cell_len / 2.5), cell + 1, self.x, self.y)
+            self.x+= cell_len
         
-        def numerate_y():
-            '''Draws numbering by Y'''      
-            cell_len = window_size / (self.size + 1)
-            self.x = -(window_size / 2) + (cell_len / 2)
-            self.y = -(window_size / 2) + 2 * cell_len - (cell_len / 10)
-            for cell in range(self.size):
-                drawnum((cell_len / 2.5), cell + 1, self.x, self.y)
-                self.y+= cell_len
-                        
-        black_corner()
-        numerate_x()
-        numerate_y()
+    def __numerate_y(self):
+        '''Draws numbering by Y'''      
+        cell_len = window_size / (self.size + 1)
+        self.x = -(window_size / 2) + (cell_len / 2)
+        self.y = -(window_size / 2) + 2 * cell_len - (cell_len / 10)
+        for cell in range(self.size):
+            drawnum((cell_len / 2.5), cell + 1, self.x, self.y)
+            self.y+= cell_len
     
     def draw_turn(self, order_x, order_y, figure):
         '''Determines the coordinates of the cell of the current move and calls
