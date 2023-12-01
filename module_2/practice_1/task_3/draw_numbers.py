@@ -1,6 +1,4 @@
 from figures import *
-from turtle import done
-
 #x and y let the user place their numbers down, d is length of sides.
 class Nine(Figures):
     
@@ -231,5 +229,4 @@ def drawnum(d, n, x, y):
     
 if __name__ == '__main__':
     drawnum(100, 9, -100, -100)
-    done()
     # pass
