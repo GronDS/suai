@@ -11,6 +11,7 @@ screen.setup(window_size + 20, window_size + 20)
 
 if __name__ == '__main__':
     while True:
+        #Ask gameboard size
         try:
             gameboard_size = int(input('Enter the N of NxN board(3-9): '))
             if gameboard_size in range(3, 10):
@@ -21,11 +22,13 @@ if __name__ == '__main__':
         except:
             print('Incorrect input! Try again!')
             continue
-        
+    
+    #Create a board instance, draws a numbered board on the screen
     gameboard = Board(gameboard_size)
     gameboard.make_board()
     gameboard.numerate_board()
     
+    #Create an instance of the 1st player, ask and write down the name
     player_1 = Player()
     if not player_1.name:
         player_1.ask_name()
@@ -40,7 +43,9 @@ if __name__ == '__main__':
                     continue
             except:
                 print('Incorrect input! Try again!')
-                continue   
+                continue
+    
+    #Create an instance of the 2nd player, ask and write down the name        
     player_2 = Player()
     if not player_2.name:
         player_2.ask_name()
@@ -53,6 +58,11 @@ if __name__ == '__main__':
         
 
     def ask_player(player_name):
+        '''Asks the player how he wants to move, if the cell is free, 
+        he writes it down and draws it, otherwise he informs about an error 
+        and asks for a move again
+        :return: None
+        '''
         while True:
             try:
                 player_name.ask_turn()

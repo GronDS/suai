@@ -1,8 +1,3 @@
-'''class Player:
-#  У игрока может быть
-#   — имя
-#   — на какую клетку ходит'''
-
 class Player:
     #tic-tac-toe player class
     def __init__(self, name=None) -> None:
