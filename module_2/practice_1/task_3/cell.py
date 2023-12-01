@@ -22,10 +22,12 @@ class Cell(Turtle):
 
     @order.setter
     def order(self, order):
-        if type(order) == list:
+        if type(order) == list[int] and len(order) == 2:
             self.__order = order
-        else:
-            print("Incorrect value!")
+        elif type(order) != list[int]:
+            print("Incorrect type!")
+        elif len(order) != 2:
+            print('Incorrect value!')
             
     @property
     def occupied(self):

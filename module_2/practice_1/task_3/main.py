@@ -9,6 +9,31 @@ from figures import Figures
 screen = Screen()
 screen.setup(window_size + 20, window_size + 20)
 
+def ask_player(player_name, gameboard):
+    '''Asks the player how he wants to move, if the cell is free, 
+    he writes it down and draws it, otherwise he informs about an error 
+    and asks for a move again
+    :return: None
+    '''
+    while True:
+        try:
+            player_name.ask_turn()
+            break
+        except:
+            print('Incorrect input! Try again!')
+            continue
+
+    for cell in gameboard.cells:
+        if cell.order == player_name.turn:
+            if cell.occupied == True:
+                print('This cell is occupied! Choose another')
+                player_name.ask_turn()
+            else:
+                cell.occupied = True
+                gameboard.draw_turn(
+                    player_name.turn[0], player_name.turn[1],\
+                        player_name.side)
+
 if __name__ == '__main__':
     while True:
         #Ask gameboard size
@@ -24,9 +49,7 @@ if __name__ == '__main__':
             continue
     
     #Create a board instance, draws a numbered board on the screen
-    gameboard = Board(gameboard_size)
-    gameboard.make_board()
-    gameboard.numerate_board()
+    current_gameboard = Board(gameboard_size)
     
     #Create an instance of the 1st player, ask and write down the name
     player_1 = Player()
@@ -55,33 +78,7 @@ if __name__ == '__main__':
         player_1, player_2 = player_2, player_1
     else:
         player_2.side = 0
-        
-
-    def ask_player(player_name):
-        '''Asks the player how he wants to move, if the cell is free, 
-        he writes it down and draws it, otherwise he informs about an error 
-        and asks for a move again
-        :return: None
-        '''
-        while True:
-            try:
-                player_name.ask_turn()
-                break
-            except:
-                print('Incorrect input! Try again!')
-                continue
-
-        for cell in gameboard.cells:
-            if cell.order == player_name.turn:
-                if cell.occupied == True:
-                    print('This cell is occupied! Choose another')
-                    player_name.ask_turn()
-                else:
-                    cell.occupied = True
-                    gameboard.draw_turn(
-                        player_name.turn[0], player_name.turn[1],\
-                            player_name.side)
-        
+                
     while True:
-        ask_player(player_1)
-        ask_player(player_2)
+        ask_player(player_1, current_gameboard)
+        ask_player(player_2, current_gameboard)

@@ -21,6 +21,8 @@ class Board():
         self.__cells :list = []
         self.__x :int|float= -(window_size / 2)
         self.__y :int|float= -(window_size / 2)
+        self.__make_board()
+        self.__numerate_board()
         
     @property
     def size(self):
@@ -67,7 +69,7 @@ class Board():
         else:
             print("Incorrect Y value")
         
-    def make_board(self):
+    def __make_board(self):
         '''Сreates a board with a frame for numbering
         :cell_len: cell border size
 	    :type cell_len: int|float
@@ -93,7 +95,7 @@ class Board():
         self.x = -(window_size / 2)
         self.y = -(window_size / 2)
         
-    def numerate_board(self):
+    def __numerate_board(self):
         '''Сalls frame design functions with numbering'''
         def black_corner():
             '''Paints the bottom left cell black'''

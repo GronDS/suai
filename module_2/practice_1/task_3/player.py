@@ -11,7 +11,7 @@ class Player:
 	:return: None
 	"""
         self.__name: str|None = name
-        self.turn: list[int] = [1, 1]
+        self.__turn: list[int] = [1, 1]
         self.__side :int|None= None
     
     @property
