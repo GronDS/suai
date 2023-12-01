@@ -51,26 +51,27 @@ if __name__ == '__main__':
     else:
         player_2.side = 0
         
+
+    def ask_player(player_name):
+        while True:
+            try:
+                player_name.ask_turn()
+                break
+            except:
+                print('Incorrect input! Try again!')
+                continue
+
+        for cell in gameboard.cells:
+            if cell.order == player_name.turn:
+                if cell.occupied == True:
+                    print('This cell is occupied! Choose another')
+                    player_name.ask_turn()
+                else:
+                    cell.occupied = True
+                    gameboard.draw_turn(
+                        player_name.turn[0], player_name.turn[1],\
+                            player_name.side)
         
     while True:
-        def ask_player(player_name):
-            while True:
-                try:
-                    player_name.ask_turn()
-                    break
-                except:
-                    print('Incorrect input! Try again!')
-                    continue
-
-            for cell in gameboard.cells:
-                if cell.order == player_name.turn:
-                    if cell.occupied == True:
-                        print('This cell is occupied! Choose another')
-                        player_name.ask_turn()
-                    else:
-                        cell.occupied = True
-                        gameboard.draw_turn(
-                            player_name.turn[0], player_name.turn[1],\
-                                player_name.side)
         ask_player(player_1)
         ask_player(player_2)
