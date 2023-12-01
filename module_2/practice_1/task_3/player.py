@@ -60,14 +60,27 @@ class Player:
         self.name = input('Enter your name: ')
         return self.name
     
-    def ask_turn(self):
+    def ask_turn(self, boardsize=3):
         '''Asks the player what move he wants to make
         return: self.turn
         '''
-        current_turn  = input(
-            f'{self.name}, select a cell and \
+        while True:
+            error_status = False
+            current_turn  = input(
+                f'{self.name}, select a cell and \
 enter separated by a space (x y): ').split()
-        self.turn = [int(numbers) for numbers in current_turn]
+            self.turn = [int(numbers) for numbers in current_turn]
+            
+            for num in self.turn:
+                if num > boardsize:
+                        print('Value is more, than boardsize. Try again!')
+                        error_status = 1
+                        break
+                else:
+                    continue
+            if error_status:
+                continue
+            break
         return self.turn
     
     def ask_side(self):

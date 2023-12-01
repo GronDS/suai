@@ -14,19 +14,7 @@ def ask_player(player_name, gameboard, size):
     '''
     while True:
         try:
-            turn = player_name.ask_turn()
-            error_status = False
-            for num in turn:
-                if num > size:
-                    print('Value is more, than boardsize. Try again!')
-                    error_status = 1
-                    break
-                else:
-                    continue
-
-            if error_status:
-                continue
-            
+            player_name.ask_turn(size)
             break
         except:
             print('Incorrect input! Try again!')
@@ -36,7 +24,7 @@ def ask_player(player_name, gameboard, size):
         if cell.order == player_name.turn:
             if cell.occupied == True:
                 print('This cell is occupied! Choose another')
-                player_name.ask_turn()
+                player_name.ask_turn(size)
             else:
                 cell.occupied = True
                 gameboard.draw_turn(
