@@ -2,10 +2,10 @@ from turtle import Turtle, done
 
 class Cell(Turtle):
     # Cell for a tic-tac-toe board, inheriting the turtle class
-    def __init__(self, order :list[int]= [1, 1]) -> None:
+    def __init__(self, order :list[int]= [0, 0]) -> None:
         """Initializes the main attributes of the cell.
 	:order: cell position on the board
-	:type order: list[int, int]
+	:type order: list[int]
 	:__occupied: cell occupancy status
 	:type __occupied: bool
 	:return: None
