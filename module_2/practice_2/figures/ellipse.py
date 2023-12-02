@@ -3,7 +3,7 @@ from oval import *
 
 class Ellipse(Oval):
     
-    def draw(self, x, y):
+    def draw(self, x :int|float=0, y :int|float=0):
         return super().draw(x, y)
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ class Isosceles_Triangle(Triangle):
         self._base_angle = base_angle
         self._apex_angle = (180 - 2 * self._base_angle)
         
-    def draw(self, x, y):
+    def draw(self, x :int|float=0, y :int|float=0):
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)

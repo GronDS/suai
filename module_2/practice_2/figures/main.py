@@ -16,6 +16,6 @@ if __name__ == '__main__':
     circ_1 = Circle(-100, -100, 'pink', 'grey', 3, 60)
     circ_1.draw(circ_1._pos_x, circ_1._pos_y)
     circ_2 = Ellipse(main_radius=30, second_radius= 50)
-    circ_2.draw(0, 0)
+    circ_2.draw()
 
     done()

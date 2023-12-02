@@ -9,7 +9,7 @@ class Right_Triangle(Triangle):
         super().__init__(pos_x, pos_y, pen_color, fill_color, pen_size, base_len)
         self._second_len = second_len
         
-    def draw(self, x, y):
+    def draw(self, x :int|float=0, y :int|float=0):
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)

@@ -9,7 +9,7 @@ class Triangle(Figure):
         super().__init__(pos_x, pos_y, pen_color,fill_color, pen_size)
         self._base_len = base_len
         
-    def draw(self, x, y):
+    def draw(self, x :int|float=0, y :int|float=0):
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)

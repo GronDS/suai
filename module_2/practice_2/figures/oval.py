@@ -9,7 +9,7 @@ class Oval(Figure):
         self._main_radius = main_radius
         self._second_radius = second_radius
         
-    def draw(self, x, y):
+    def draw(self, x :int|float=0, y :int|float=0):
         self.go_to(x,y)
         dx = self.xcor()
         dy = self.ycor()
