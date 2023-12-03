@@ -7,7 +7,7 @@ from ellipse import Ellipse
 from rectangle import Rectangle
 from rhombus import Rhombus
 from square import Square
-
+from trapezoid import Trapezoid
 
 if __name__ == '__main__':
     isos_1 = Isosceles_Triangle('white','yellow',base_angle=30)
@@ -26,5 +26,6 @@ if __name__ == '__main__':
     rhomb_1.draw(200, 100)
     square_1 = Square('orange', 'indigo', 10, 200)
     square_1.draw(-350, -350)
-    
+    trapez_1 = Trapezoid ('white', 'red', 1, 300, 90, 150, 70)
+    trapez_1.draw(-200, 200)
     done()
