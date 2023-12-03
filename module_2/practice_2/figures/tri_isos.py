@@ -20,7 +20,7 @@ class Isosceles_Triangle(Triangle):
         self.setheading(0)
         
 if __name__ == '__main__':
-    my_trngl = Isosceles_Triangle(pos_x=200, pos_y=50,pen_size=4,
+    my_trngl = Isosceles_Triangle(pen_size=4,
                             pen_color='red',fill_color='white', base_len=100)
     my_trngl.draw(200, -50)
     my_trngl.set_pen_size(1)

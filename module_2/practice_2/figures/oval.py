@@ -24,7 +24,7 @@ class Oval(Figure):
 
 
 if __name__ == '__main__':
-    circle = Oval(0,100,'yellow', 'black', 6, 50, 50)
+    circle = Oval('yellow', 'black', 6, 50, 50)
     circle.draw(100, 100)
     circle.draw(-100, -100)
     done()

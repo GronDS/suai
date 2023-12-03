@@ -9,6 +9,6 @@ class Circle(Oval):
         
 
 if __name__ == '__main__':
-    circle_1 = Circle(0,0,'green', 'blue', 5, 200)
+    circle_1 = Circle('green', 'blue', 5, 200)
     circle_1.draw(-100,0)
     done()
