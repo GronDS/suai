@@ -34,14 +34,12 @@ class Player:
         if type(turn) == list and len(turn) == 2:
             self.__turn = turn
         elif type(turn) != list:
-            print("Turn incorrect type! Try again!")
-            self.ask_turn()
+            print("Turn incorrect type!")
         elif len(turn) != 2:
-            print('Incorrect input! Try again!')
-            self.ask_turn()
+            print('Incorrect turn list len!')
+            
         else:
             print('Error!')
-            self.ask_turn()
 
     @property
     def side(self):

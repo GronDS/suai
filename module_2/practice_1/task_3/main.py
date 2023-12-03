@@ -5,8 +5,10 @@ from player import Player
 
 screen = Screen()
 screen.setup(window_size + 20, window_size + 20)
+gameboard_size = 5
 
-def ask_player(player_name, gameboard, size):
+
+def ask_player(player_name, gameboard):
     '''Asks the player how he wants to move, if the cell is free, 
     he writes it down and draws it, otherwise he informs about an error 
     and asks for a move again
@@ -14,7 +16,7 @@ def ask_player(player_name, gameboard, size):
     '''
     while True:
         try:
-            player_name.ask_turn(size)
+            player_name.ask_turn(gameboard_size)
             break
         except:
             print('Incorrect input! Try again!')
@@ -24,7 +26,7 @@ def ask_player(player_name, gameboard, size):
         if cell.order == player_name.turn:
             if cell.occupied == True:
                 print('This cell is occupied! Choose another')
-                player_name.ask_turn(size)
+                player_name.ask_turn(gameboard_size)
             else:
                 cell.occupied = True
                 gameboard.draw_turn(
@@ -39,10 +41,10 @@ if __name__ == '__main__':
             if gameboard_size in range(3, 10):
                 break
             else:
-                print('Incorrect input! Try again!')
+                print('Int input not in gameboard range! Try again!')
                 continue
         except:
-            print('Incorrect input! Try again!')
+            print('Error input! Try again!(3-10)')
             continue
     
     #Create a board instance, draws a numbered board on the screen
@@ -59,10 +61,10 @@ if __name__ == '__main__':
                 if player_1.side in [0, 1]:
                     break
                 else:
-                    print('Incorrect input! Try again!')
+                    print('Incorrect input! Try again!(0/1)')
                     continue
             except:
-                print('Incorrect input! Try again!')
+                print('Incorrect input! Try again!(0/1)')
                 continue
     
     #Create an instance of the 2nd player, ask and write down the name        
@@ -77,5 +79,5 @@ if __name__ == '__main__':
         player_2.side = 0
                 
     while True:
-        ask_player(player_1, current_gameboard, gameboard_size)
-        ask_player(player_2, current_gameboard, gameboard_size)
+        ask_player(player_1, current_gameboard)
+        ask_player(player_2, current_gameboard)
