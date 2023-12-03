@@ -1,11 +1,10 @@
 from figure import *
 
 class Oval(Figure):
-    def __init__(self, pos_x: int | float = 0, pos_y: int | float = 0, 
-                 pen_color: str = 'black', fill_color: str = 'white', 
+    def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 
                  pen_size: int = 1, main_radius: int|float = 100, 
                  second_radius: int|float = 100) -> None:
-        super().__init__(pos_x, pos_y, pen_color, fill_color, pen_size)
+        super().__init__(pen_color, fill_color, pen_size)
         self._main_radius = main_radius
         self._second_radius = second_radius
         

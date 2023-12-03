@@ -6,12 +6,9 @@ from math import sin, cos, radians, pi
 class Figure(ABC, Turtle):   
     
     def __init__(
-        self, pos_x :int|float=0, pos_y :int|float=0,pen_color :str= 'black',
-        fill_color :str='white', pen_size :int= 1
+        self,pen_color :str= 'black',fill_color :str='white', pen_size :int= 1
         ) -> None:
         super().__init__()
-        self._pos_x = pos_x
-        self._pos_y = pos_y
         self._pen_color = pen_color
         self._fill_color = fill_color
         self._pen_size = pen_size
