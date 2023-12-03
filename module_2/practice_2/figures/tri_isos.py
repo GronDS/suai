@@ -1,15 +1,25 @@
 from tri import *
 
 class Isosceles_Triangle(Triangle):
-    
+        # Isosceles triangle class  
     def __init__(
         self, pen_color: str = 'black', fill_color: str = 'white', 
         pen_size: int = 1, base_len: int | float = 100, 
         base_angle: int | float = 45) -> None:
+        '''
+        :base_angle: triangle base angle
+        :type base_angle: int | float
+        '''
         super().__init__(pen_color, fill_color, pen_size, base_len)
         self.__base_angle = base_angle
                 
     def draw(self, x :int|float=0, y :int|float=0):
+        """"Draw isosceles triangle.
+        :x: x coord
+	    :type x: int | float
+	    :y: x coord
+	    :type y: int | float
+        """
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)

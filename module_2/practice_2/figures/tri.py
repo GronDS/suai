@@ -1,12 +1,22 @@
 from figure import *
 class Triangle(Figure):
-    
+    # Main class for triangle in turtle
     def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 
                  pen_size: int = 1, base_len :int|float=100) -> None:
         super().__init__(pen_color, fill_color, pen_size)
+        '''
+        :base_len: triangle base length
+        :type base_len: int | float
+        '''
         self._base_len = base_len
         
     def draw(self, x :int|float=0, y :int|float=0):
+        """"Draw base triangle.
+        :x: x coord
+	    :type x: int | float
+	    :y: x coord
+	    :type y: int | float
+        """
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)

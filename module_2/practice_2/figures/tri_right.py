@@ -1,14 +1,24 @@
 from tri import *
 
 class Right_Triangle(Triangle):
-    
+    # Right triangle class  
     def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 
                  pen_size: int = 1, base_len: int | float = 100, 
                  second_len: int | float = 100) -> None:
+        """
+        :second_len: vertical triangle leg length
+        :type second_len: int | float
+        """
         super().__init__(pen_color, fill_color, pen_size, base_len)
         self.__second_len = second_len
         
     def draw(self, x :int|float=0, y :int|float=0):
+        """"Draw right triangle.
+        :x: x coord
+	    :type x: int | float
+	    :y: x coord
+	    :type y: int | float
+        """
         self.begin_fill()
         self.go_to(x, y)
         self.forward(self._base_len)
