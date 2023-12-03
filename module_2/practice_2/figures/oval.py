@@ -1,4 +1,4 @@
-from figure import *
+from figures.figure import *
 
 class Oval(Figure):
         # Main class for oval in turtle

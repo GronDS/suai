@@ -1,4 +1,4 @@
-from oval import *
+from figures.oval import *
 
 
 class Ellipse(Oval):

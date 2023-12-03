@@ -1,4 +1,4 @@
-from tri import *
+from figures.tri import *
 
 class Right_Triangle(Triangle):
     # Right triangle class  

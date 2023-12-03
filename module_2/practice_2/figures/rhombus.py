@@ -1,4 +1,4 @@
-from parallelogram import *
+from figures.parallelogram import *
 
 
 class Rhombus(Parallelogram):

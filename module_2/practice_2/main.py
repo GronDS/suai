@@ -1,13 +1,14 @@
-from figure import *
-from tri_isos import Isosceles_Triangle
-from tri_eq import Equilateral_Triangle
-from tri_right import Right_Triangle
-from circle import Circle
-from ellipse import Ellipse
-from rectangle import Rectangle
-from rhombus import Rhombus
-from square import Square
-from trapezoid import Trapezoid
+from figures import Figure, done, sin, cos, radians, pi
+from figures import Isosceles_Triangle
+from figures import Equilateral_Triangle
+from figures import Right_Triangle
+from figures import Circle
+from figures import Ellipse
+from figures import Parallelogram
+from figures import Rectangle
+from figures import Rhombus
+from figures import Square
+from figures import Trapezoid
 
 if __name__ == '__main__':
     isos_1 = Isosceles_Triangle('white','yellow',base_angle=30)

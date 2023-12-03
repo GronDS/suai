@@ -1,6 +1,10 @@
 from figures.figure import (
     Figure,
-    done
+    done,
+    sin, 
+    cos,
+    radians,
+    pi
 )
 from figures.tri import(
     Triangle
@@ -28,4 +32,28 @@ from figures.circle import(
 
 from figures.ellipse import(
     Ellipse
+)
+
+from figures.quads import(
+    Quadrilaterals
+)
+
+from figures.parallelogram import(
+    Parallelogram
+)
+
+from figures.trapezoid import(
+    Trapezoid
+)
+
+from figures.rectangle import(
+    Rectangle
+)
+
+from figures.square import(
+    Square
+)
+
+from figures.rhombus import(
+    Rhombus
 )
