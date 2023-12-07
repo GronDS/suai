@@ -21,6 +21,8 @@ if __name__ == '__main__':
     circ_1.draw(-100, -100)
     circ_2 = Ellipse(main_radius=30, second_radius= 50)
     circ_2.draw(-150)
+    paral_1 = Parallelogram('white', 'blue', 2, 200, 300, 65)
+    paral_1.draw(-250, 100)
     rect_1 = Rectangle(pen_size= 5, first_side= 100, second_side= 20)
     rect_1.draw(200, -200)
     rhomb_1 = Rhombus('brown', 'purple', 2, 50, 120)
