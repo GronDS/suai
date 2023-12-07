@@ -1,4 +1,4 @@
-from module_2.practice_2.figures.ellipse import *
+from figures.ellipse import *
 
 
 class Circle(Ellipse):
