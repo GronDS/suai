@@ -1,7 +1,7 @@
-from figures.oval import *
+from module_2.practice_2.figures.ellipse import *
 
 
-class Circle(Oval):
+class Circle(Ellipse):
     def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 
                  pen_size: int = 1, main_radius: int | float = 100) -> None:
         super().__init__(pen_color, fill_color, pen_size, main_radius)

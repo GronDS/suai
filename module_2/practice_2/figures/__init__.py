@@ -22,10 +22,6 @@ from figures.tri_right import(
     Right_Triangle
 )
 
-from figures.oval import(
-    Oval
-)
-
 from figures.circle import(
     Circle
 )
