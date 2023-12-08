@@ -1,4 +1,4 @@
-from figures.ellipse import *
+from ellipse import *
 
 
 class Circle(Ellipse):

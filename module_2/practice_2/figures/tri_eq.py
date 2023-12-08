@@ -1,4 +1,4 @@
-from figures.tri import *
+from tri import *
 class Equilateral_Triangle(Triangle):
     # Equilateral triangle class  
     def draw(self, x: int | float = 0, y: int | float = 0):

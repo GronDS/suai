@@ -1,5 +1,4 @@
-from figures.parallelogram import *
-
+from parallelogram import *
 
 class Rhombus(Parallelogram):
     def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 
@@ -11,7 +10,6 @@ class Rhombus(Parallelogram):
         """
         super().__init__(pen_color, fill_color, pen_size,
                          first_side, first_side, base_angle)
-        self._base_angle = base_angle
 
 if __name__ == '__main__':
     rhomb = Rhombus(

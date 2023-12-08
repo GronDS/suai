@@ -1,4 +1,4 @@
-from figures.rectangle import *
+from rectangle import *
 
 
 class Square(Rectangle):

@@ -1,4 +1,4 @@
-from figures.quads import *
+from quads import *
 
 class Trapezoid(Quadrilaterals):
 # Trapezoid class for turtle    

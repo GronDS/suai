@@ -1,4 +1,4 @@
-from figures.figure import *
+from figure import *
 
 
 class Quadrilaterals(Figure):

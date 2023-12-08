@@ -1,4 +1,4 @@
-from figures.parallelogram import *
+from parallelogram import *
 
 class Rectangle(Parallelogram):
     #Rectangle class  

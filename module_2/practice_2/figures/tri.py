@@ -1,4 +1,4 @@
-from figures.figure import *
+from figure import *
 class Triangle(Figure):
     # Main class for triangle in turtle
     def __init__(self, pen_color: str = 'black', fill_color: str = 'white', 

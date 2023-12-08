@@ -1,4 +1,4 @@
-from figures.quads import *
+from quads import *
 
 
 class Parallelogram(Quadrilaterals):

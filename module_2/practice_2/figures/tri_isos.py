@@ -1,4 +1,4 @@
-from figures.tri import *
+from tri import *
 
 class Isosceles_Triangle(Triangle):
         # Isosceles triangle class  
