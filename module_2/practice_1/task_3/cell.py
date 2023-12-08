@@ -11,7 +11,19 @@ class Cell(Turtle):
 	:return: None
 	"""
         super().__init__()
-        self.__order: list = order
+        try:
+            if type(order) == list and len(order) == 2:
+                self.__order: list = order
+            elif type(order) != list:
+                raise TypeError("Cell incorrect type!")
+            elif len(order) != 2:
+                raise ValueError("Cell incorrect value!")
+            else:
+                raise Exception('Error!')
+        except (TypeError, ValueError, Exception) as error:
+            print(error)
+            raise
+        
         self.__occupied: bool = False
         self.pensize(3)
         self.hideturtle()
@@ -22,14 +34,22 @@ class Cell(Turtle):
 
     @order.setter
     def order(self, order):
+        # try:
         if type(order) == list and len(order) == 2:
             self.__order = order
         elif type(order) != list:
             print("Cell incorrect type!")
+            # raise TypeError("Cell incorrect type!")
         elif len(order) != 2:
-            print('Cell incorrect value!')
+            print("Cell incorrect value!")
+            # raise ValueError("Cell incorrect value!")
         else:
-            print('Error!')
+            print("Error!")
+            # raise Exception('Error!')
+        # except (TypeError, ValueError, Exception) as error:
+        #     print(error)
+        #     raise
+            
             
     @property
     def occupied(self):
@@ -40,7 +60,7 @@ class Cell(Turtle):
         if type(occupied) == bool:
                 self.__occupied = occupied
         else:
-            print("Incorrect value")
+            raise ValueError("Incorrect Cell.occupied value")
     
     def draw_cell(self, cell_len, x, y):
         # Drawing a cell using a turtle 
@@ -67,4 +87,9 @@ class Cell(Turtle):
         self.penup()
 
 if __name__ == '__main__':    
-    pass
+    test_cell = Cell([1,2])
+    print(test_cell.order)
+    test_cell.draw_cell(25, 0, 0)
+    test_cell.occupied = False
+    done()
+    
