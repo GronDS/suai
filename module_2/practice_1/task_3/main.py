@@ -4,7 +4,7 @@ from board import *
 from player import Player
 
 screen = Screen()
-screen.setup(window_size + 20, window_size + 20)
+screen.setup(WINDOW_SIZE + 20, WINDOW_SIZE + 20)
 gameboard_size = 5
 
 
@@ -44,7 +44,7 @@ if __name__ == '__main__':
                 print('Int input not in gameboard range! Try again!')
                 continue
         except:
-            print('Error input! Try again!(3-10)')
+            print('Error input! Try again!(3-9)')
             continue
     
     #Create a board instance, draws a numbered board on the screen

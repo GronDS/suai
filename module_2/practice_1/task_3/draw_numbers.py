@@ -197,9 +197,25 @@ numbers = {
     9 : Nine
     }
 
-def drawnum(d, n, x, y): 
-    numbers[n](x,y).draw(d)
-    
+def drawnum(d: int|float, n :int, x :int|float, y :int|float):
+    try:
+        if type(n) != int:
+            raise TypeError('Wrong type of number value!')
+        if n not in range(1, 10):
+            raise ValueError('Number value out of board range!')
+        if type(d) != int and type(d) != float:
+            raise TypeError('Wrong type of sides lenght value!')
+        if type(x) != int and type(x) != float:
+            raise TypeError('Wrong X type!')
+        if type(y) != int and type(y) != float:
+            raise TypeError('Wrong Y type!')                
+    except (TypeError, ValueError) as error:
+        print(error)
+        raise
+    else:
+        numbers[n](x ,y).draw(d)
+        
 if __name__ == '__main__':
     drawnum(100, 9, -100, -100)
+    done()
     # pass

@@ -23,33 +23,9 @@ class Cell(Turtle):
         except (TypeError, ValueError, Exception) as error:
             print(error)
             raise
-        
         self.__occupied: bool = False
         self.pensize(3)
         self.hideturtle()
-        
-    @property
-    def order(self):
-        return self.__order
-
-    @order.setter
-    def order(self, order):
-        # try:
-        if type(order) == list and len(order) == 2:
-            self.__order = order
-        elif type(order) != list:
-            print("Cell incorrect type!")
-            # raise TypeError("Cell incorrect type!")
-        elif len(order) != 2:
-            print("Cell incorrect value!")
-            # raise ValueError("Cell incorrect value!")
-        else:
-            print("Error!")
-            # raise Exception('Error!')
-        # except (TypeError, ValueError, Exception) as error:
-        #     print(error)
-        #     raise
-            
             
     @property
     def occupied(self):
@@ -57,10 +33,14 @@ class Cell(Turtle):
 
     @occupied.setter
     def occupied(self, occupied):
-        if type(occupied) == bool:
-                self.__occupied = occupied
-        else:
-            raise ValueError("Incorrect Cell.occupied value")
+        try:
+            if type(occupied) == bool:
+                    self.__occupied = occupied
+            else:
+                    raise TypeError("Incorrect Cell.occupied type")
+        except TypeError as error:
+            print(error)
+            raise
     
     def draw_cell(self, cell_len, x, y):
         # Drawing a cell using a turtle 
@@ -88,7 +68,6 @@ class Cell(Turtle):
 
 if __name__ == '__main__':    
     test_cell = Cell([1,2])
-    print(test_cell.order)
     test_cell.draw_cell(25, 0, 0)
     test_cell.occupied = False
     done()
