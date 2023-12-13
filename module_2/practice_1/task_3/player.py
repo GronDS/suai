@@ -70,6 +70,7 @@ class Player:
             current_turn  = input(
                 f'{self.name}, select a cell and \
 enter separated by a space (x y): ').split()
+            
             self.turn = [int(numbers) for numbers in current_turn]
             
             for num in self.turn:
