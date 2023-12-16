@@ -60,5 +60,5 @@ class Player:
         
         
 if __name__ == '__main__':
-    # player_1 = Player('Player', 1)
-    # print(player_1.ask_turn([3,3], 5)
+#   player_1 = Player('Player', 1)
+#   print(player_1.ask_turn([3,3], 5))
