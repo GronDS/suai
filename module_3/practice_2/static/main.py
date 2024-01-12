@@ -17,7 +17,7 @@ class Array:
         self.counter = 0
     
     def __len__(self):
-        return len(self.data)    
+        return self.size    
         
         
     def __iter__(self):
@@ -25,7 +25,7 @@ class Array:
         return self
     
     def __next__(self):
-        if self.counter + 1 <= len(self.data):
+        if self.counter + 1 <= self.size:
             self.counter+= 1
             return self.data[self.counter - 1]
         else:
@@ -58,12 +58,12 @@ class Array:
         # self.data = self.data[::-1]
         return self.data[::-1]
     
+
     
 if __name__ == "__main__":
     arr: Array = Array(int, 5)
     print(arr)
     arr[3] = 6
-    # arr[4] = 'r'
     print(arr)
     print(6 in arr)
     print(reversed(arr))
