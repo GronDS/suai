@@ -72,14 +72,14 @@ class DynamicArray:
         for k in range(self.size):  # Reference all existing values
             new_data[k] = self.data[k]
  
-        self.data = new_data  # Call A the new bigger array
+        self.data = new_data  # Call self.data the new bigger array
         self.capacity = new_cap  # Reset the capacity
     
     def append(self, ele):
         if self.size == self.capacity:
             self._resize(self.capacity + 1)
 
-        self.data[self.size] = ele  # Set self.n index to element
+        self.data[self.size] = ele  # Set self.size index to element
         self.size += 1
         
     def make_array(self, new_cap):
