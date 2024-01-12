@@ -64,7 +64,7 @@ class DynamicArray:
 
         
     def __reversed__(self) -> List:
-        return self.data[::-1]
+        return self.data[:self.size:-1]
     
     def _resize(self, new_cap): 
         new_data = self.make_array(new_cap)  # New bigger array
@@ -77,7 +77,7 @@ class DynamicArray:
     
     def append(self, ele):
         if self.size == self.capacity:
-            self._resize(self.capacity + 1)
+            self._resize(self.capacity * 2)
 
         self.data[self.size] = ele  # Set self.size index to element
         self.size += 1
@@ -87,13 +87,14 @@ class DynamicArray:
         Returns a new array with new_cap capacity
         """
         return ([self.type] * new_cap)
+    
     def sum(self) -> T|TypeError:
         summable_types = [int, float, bool]
         
         try:
             summ = 0
             if self.type in summable_types:
-                for i in self.data:
+                for i in self.data[0:self.size]:
                     summ += i
                 return summ
             else:
