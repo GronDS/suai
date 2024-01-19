@@ -83,7 +83,7 @@ if __name__ == '__main__':
     ht.insert("cherry", 5) 
 
     print("apple" in ht) 
-    print("durian" in ht) 
+    print("potato" in ht) 
 
     print(ht.search("banana")) # 2 
 
